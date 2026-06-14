@@ -2,6 +2,7 @@
   "name": "mbl-dental-clinic",
   "version": "1.0.0",
   "description": "MBL Dental Clinic Booking System",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
