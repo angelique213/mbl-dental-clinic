@@ -1,0 +1,80 @@
+/* applies to the whole page */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* page background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff5fb, #f4fff3);
+    color: #222;
+}
+
+/* top header section */
+.header {
+    background: linear-gradient(90deg, #d1007a, #39d60a);
+    position: relative;
+    padding: 30px;
+    text-align: center;
+}
+
+/* clinic logo */
+.header-logo {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+    background: white;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* clinic title */
+.header-content h1 {
+    margin: 0;
+    color: white;
+    font-size: 52px;
+}
+
+/* clinic subtitle */
+.subtitle {
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* navigation menu */
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* page title and button row */
+.section-header {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

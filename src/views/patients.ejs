@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patients</title>
+
+    <!-- connect css file -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- clinic header -->
+    <header class="header">
+
+        <!-- clinic logo -->
+        <img
+            src="/images/logo.png"
+            alt="MBL Dental Clinic Logo"
+            class="header-logo"
+        >
+
+        <!-- page title and navigation -->
+        <div class="header-content">
+            <h1>Patients</h1>
+
+            <p class="subtitle">
+                Manage Patient Records
+            </p>
+
+            <!-- navigation menu -->
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/patients">Patients</a>
+                <a href="/appointments">Appointments</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- title and add button -->
+        <div class="section-header">
+            <h2>Patient List</h2>
+
+            <a href="/patients/add" class="add-button">
+                Add Patient
+            </a>
+        </div>
+
+        <!-- patient table -->
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Patient Name</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Sample Patient</td>
+                <td>123-456-7890</td>
+                <td>
+                    <a href="#" class="edit-btn">Edit</a>
+                    <a href="#" class="delete-btn">Delete</a>
+                </td>
+            </tr>
+        </table>
+
+    </main>
+
+</body>
+</html>
