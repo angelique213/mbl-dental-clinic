@@ -1,8 +1,7 @@
-// this shows the main dashboard page
+// show dashboard page
 const showDashboard = (req, res) => {
     res.render("dashboard");
 };
 
-module.exports = {
-    showDashboard
-};
+// export controller function
+export { showDashboard };

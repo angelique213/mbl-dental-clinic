@@ -1,10 +1,14 @@
-const express = require("express");
+// import express
+import express from "express";
+
+// import controllers
+import { showDashboard } from "../controllers/dashboardController.js";
+
+// create router
 const router = express.Router();
 
-const dashboardController = require("../controllers/dashboardController");
-
 // dashboard route
-router.get("/", dashboardController.showDashboard);
+router.get("/", showDashboard);
 
 // patients route
 router.get("/patients", (req, res) => {
@@ -26,4 +30,5 @@ router.get("/appointments/add", (req, res) => {
     res.render("add-appointment");
 });
 
-module.exports = router;
+// export router
+export default router;
