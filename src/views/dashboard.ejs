@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- basic page information -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBL Dental Clinic</title>
 
-  <title>MBL Dental Clinic</title>
-
-  <!-- connect css file -->
-  <link rel="stylesheet" href="/css/style.css">
+    <!-- connect css file -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-  <!-- clinic header -->
-  <header class="header">
 
-    <!-- clinic logo -->
-    <img
-      src="/images/logo.png"
-      alt="MBL Dental Clinic Logo"
-      class="header-logo"
-    >
+    <!-- top header -->
+    <header class="header">
 
-    <!-- clinic title and navigation -->
-    <div class="header-content">
-      <h1>MBL Dental Clinic</h1>
+        <!-- clinic logo -->
+        <img
+            src="/images/logo.png"
+            alt="MBL Dental Clinic Logo"
+            class="header-logo"
+        >
 
-      <p class="subtitle">
-        Booking and Management System
-      </p>
+        <!-- clinic title and menu -->
+        <div class="header-content">
+            <h1>MBL Dental Clinic</h1>
+            <p class="subtitle">Booking and Management System</p>
 
-      <!-- navigation menu -->
-      <nav>
-        <a href="/">Dashboard</a>
-        <a href="/patients">Patients</a>
-        <a href="/appointments">Appointments</a>
-      </nav>
-    </div>
+            <!-- navigation links -->
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/patients">Patients</a>
+                <a href="/appointments">Appointments</a>
+                <a href="/services">Services</a>
 
-  </header>
+                <% if (!user) { %>
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                <% } else { %>
+                    <a href="/logout">Logout</a>
+                <% } %>
+            </nav>
+        </div>
 
-  <main>
-    <!-- dashboard summary cards -->
-    <section class="dashboard">
+    </header>
 
-      <div class="card">
-        <h2>Patients</h2>
-        <p>0</p>
-      </div>
+    <main>
 
-      <div class="card">
-        <h2>Appointments</h2>
-        <p>0</p>
-      </div>
+        <!-- dashboard numbers -->
+        <section class="dashboard">
 
-      <div class="card">
-        <h2>Services</h2>
-        <p>4</p>
-      </div>
+            <div class="card">
+                <h2>Patients</h2>
+                <p>0</p>
+            </div>
 
-    </section>
+            <div class="card">
+                <h2>Appointments</h2>
+                <p>0</p>
+            </div>
 
-    <!-- welcome section -->
-    <section class="welcome-section">
+            <div class="card">
+                <h2>Services</h2>
+                <p>5</p>
+            </div>
 
-      <div class="welcome-card">
-        <h2>Welcome to MBL Dental Clinic</h2>
+        </section>
 
-        <p class="welcome-text">
-          This system helps manage patient records,
-          appointments, and dental services.
-          Use the navigation menu above to get started.
-        </p>
-      </div>
+        <!-- welcome section -->
+        <section class="welcome-section">
+            <div class="welcome-card">
 
-    </section>
-  </main>
+                <% if (!user) { %>
+
+                    <!-- message for visitors -->
+                    <h2>Welcome to MBL Dental Clinic</h2>
+                    <p class="welcome-text">
+                        Please login or register to book an appointment and manage your dental records.
+                    </p>
+
+                    <a class="add-button" href="/login">Login</a>
+                    <a class="transactions-btn" href="/register">Register</a>
+
+                <% } else if (user.role === "admin") { %>
+
+                    <!-- admin dashboard -->
+                    <h2>Admin Dashboard</h2>
+                    <p class="welcome-text">
+                        Manage patients, appointments, services, users, reviews, and contact messages.
+                    </p>
+
+                    <a class="add-button" href="/admin">Admin Panel</a>
+                    <a class="transactions-btn" href="/services">Manage Services</a>
+
+                <% } else { %>
+
+                    <!-- patient dashboard -->
+                    <h2>Patient Dashboard</h2>
+                    <p class="welcome-text">
+                        Book appointments, view your appointment status, and leave a review.
+                    </p>
+
+                    <a class="add-button" href="/appointments/add">Book Appointment</a>
+                    <a class="transactions-btn" href="/services">View Services</a>
+
+                <% } %>
+
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>

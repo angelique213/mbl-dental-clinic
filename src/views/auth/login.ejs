@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- connect css file -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- login form card -->
+    <div class="form-card">
+        <h1>Login</h1>
+
+        <!-- user login form -->
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- link to register -->
+        <a class="back-link" href="/register">Need an account? Register</a>
+
+        <!-- link back to dashboard -->
+        <a class="back-link" href="/">Back to Dashboard</a>
+    </div>
+
+</body>
+</html>

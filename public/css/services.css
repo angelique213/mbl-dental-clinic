@@ -1,0 +1,40 @@
+/* services card layout */
+.services-grid {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* each service card */
+.service-card {
+    background: white;
+    padding: 25px;
+
+    border-radius: 20px;
+    border-top: 8px solid #39d60a;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+/* service title */
+.service-card h2 {
+    color: #d1007a;
+    margin-top: 0;
+}
+
+/* service description */
+.service-card p {
+    line-height: 1.5;
+}
+
+/* service price */
+.service-card h3 {
+    color: #39d60a;
+    font-size: 28px;
+}

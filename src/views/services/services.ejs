@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Services</title>
+
+    <!-- connect css file -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- clinic header -->
+    <header class="header">
+
+        <!-- clinic logo -->
+        <img
+            src="/images/logo.png"
+            alt="MBL Dental Clinic Logo"
+            class="header-logo"
+        >
+
+        <!-- page title and navigation -->
+        <div class="header-content">
+            <h1>Dental Services</h1>
+
+            <p class="subtitle">
+                Services offered by MBL Dental Clinic
+            </p>
+
+            <!-- navigation menu -->
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/patients">Patients</a>
+                <a href="/appointments">Appointments</a>
+                <a href="/services">Services</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- page section title -->
+        <div class="section-header">
+            <h2>Available Services</h2>
+        </div>
+
+        <!-- services from database -->
+        <section class="services-grid">
+
+            <% services.forEach(service => { %>
+
+                <div class="service-card">
+                    <h2><%= service.service_name %></h2>
+
+                    <p>
+                        <%= service.description %>
+                    </p>
+
+                    <h3>
+                        $<%= service.price %>
+                    </h3>
+                </div>
+
+            <% }) %>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
