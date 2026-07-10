@@ -1,0 +1,109 @@
+<%- include("../partials/header", {
+    title: "Manage Users",
+    subtitle: "View and Update User Roles",
+    css: "admin"
+}) %>
+
+<div class="container">
+
+    <h2>Manage Users</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>First Name</th>
+
+                    <th>Last Name</th>
+
+                    <th>Email</th>
+
+                    <th>Role</th>
+
+                    <th>Update</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <% users.forEach(user => { %>
+
+                    <tr>
+
+                        <td>
+                            <%= user.user_id %>
+                        </td>
+
+                        <td>
+                            <%= user.first_name %>
+                        </td>
+
+                        <td>
+                            <%= user.last_name %>
+                        </td>
+
+                        <td>
+                            <%= user.email %>
+                        </td>
+
+                        <td>
+
+                            <form
+                                action="/admin/users/edit/<%= user.user_id %>"
+                                method="POST"
+                            >
+
+                                <select
+                                    name="role"
+                                >
+
+                                    <option
+                                        value="admin"
+                                        <%= user.role === "admin" ? "selected" : "" %>>
+                                        Admin
+                                    </option>
+
+                                    <option
+                                        value="patient"
+                                        <%= user.role === "patient" ? "selected" : "" %>>
+                                        Patient
+                                    </option>
+
+                                </select>
+
+                        </td>
+
+                        <td>
+
+                                <button
+                                    type="submit"
+                                    class="add-button"
+                                >
+                                    Save
+                                </button>
+
+                            </form>
+
+                        </td>
+
+                    </tr>
+
+                <% }) %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<%- include("../partials/footer") %>
