@@ -15,7 +15,10 @@ import {
     showManageAppointments,
     showEditAppointment,
     saveEditedAppointment,
-    removeAppointment
+    removeAppointment,
+
+    showManageUsers,
+    saveUserRole
 
 } from "../controllers/adminController.js";
 
@@ -87,6 +90,20 @@ router.post(
 router.post(
     "/appointments/delete/:id",
     removeAppointment
+);
+
+// ==========================
+// Users
+// ==========================
+
+router.get(
+    "/users",
+    showManageUsers
+);
+
+router.post(
+    "/users/edit/:id",
+    saveUserRole
 );
 
 // export router
