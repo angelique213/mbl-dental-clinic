@@ -1,6 +1,11 @@
 // import express
 import express from "express";
 
+// import validation
+import {
+    validateRegister
+} from "../middleware/validationMiddleware.js";
+
 // import auth controller functions
 import {
     showLogin,
@@ -23,7 +28,11 @@ router.post("/login", loginUser);
 router.get("/register", showRegister);
 
 // register new user
-router.post("/register", registerUser);
+router.post(
+    "/register",
+    validateRegister,
+    registerUser
+);
 
 // logout user
 router.get("/logout", logoutUser);
