@@ -12,24 +12,60 @@ import {
 } from "../controllers/patientsController.js";
 
 // import validation
-import { validatePatient } from "../middleware/validationMiddleware.js";
+import {
+    validatePatient
+} from "../middleware/validationMiddleware.js";
 
 // create router
 const router = express.Router();
 
-// patient list
-router.get("/", showPatients);
+// =========================
+// Patient List
+// =========================
 
-// add patient
-router.get("/add", showAddPatient);
-router.post("/add", validatePatient, savePatient);
+router.get(
+    "/",
+    showPatients
+);
 
-// edit patient
-router.get("/edit/:id", showEditPatient);
-router.post("/edit/:id", validatePatient, updatePatientInfo);
+// =========================
+// Add Patient
+// =========================
 
-// delete patient
-router.get("/delete/:id", deletePatientInfo);
+router.get(
+    "/add",
+    showAddPatient
+);
+
+router.post(
+    "/add",
+    validatePatient,
+    savePatient
+);
+
+// =========================
+// Edit Patient
+// =========================
+
+router.get(
+    "/edit/:id",
+    showEditPatient
+);
+
+router.post(
+    "/edit/:id",
+    validatePatient,
+    updatePatientInfo
+);
+
+// =========================
+// Delete Patient
+// =========================
+
+router.get(
+    "/delete/:id",
+    deletePatientInfo
+);
 
 // export router
 export default router;
