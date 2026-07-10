@@ -4,7 +4,7 @@
 
 The **MBL Dental Clinic Booking and Management System** is a web application developed as the final project for **CSE 340 – Web Backend Development** at **BYU–Idaho**.
 
-The application allows patients to register, log in, book dental appointments, view their appointments, and manage their patient information. Administrators can manage patients, appointments, and dental services through a secure admin dashboard.
+The application allows patients to register, log in, book dental appointments, view their appointments, and manage their patient information. Administrators can manage patients, appointments, dental services, and user roles through a secure admin dashboard.
 
 This project was inspired by my family's dental clinic, **MBL Dental Clinic**, in the Philippines and was created to provide a more organized and convenient appointment booking and management system.
 
@@ -28,6 +28,7 @@ This project was inspired by my family's dental clinic, **MBL Dental Clinic**, i
 
 ### Administrator Features
 - View administrator dashboard
+- Manage users and update user roles
 - Manage patients
 - Manage appointments
 - Manage dental services
@@ -62,6 +63,40 @@ The application uses the following database tables:
 
 ---
 
+## Database Schema (ERD)
+
+The following Entity Relationship Diagram (ERD) shows the database structure and relationships used in this project.
+
+![MBL Dental Clinic ERD](public/images/erd.png)
+
+---
+
+## User Roles
+
+### Administrator
+
+Administrators can:
+
+- Manage users and update user roles
+- Manage patients
+- Manage appointments
+- Manage dental services
+- Add, edit, and delete records
+- Access the administrator dashboard
+
+### Patient
+
+Patients can:
+
+- Register an account
+- Log in and log out
+- Book dental appointments
+- View appointment history
+- Cancel appointments
+- Update their patient profile
+
+---
+
 ## Project Structure
 
 ```text
@@ -78,6 +113,7 @@ mbl-dental-clinic
 ├── src/
 │   ├── config/
 │   ├── controllers/
+│   ├── middleware/
 │   ├── models/
 │   ├── routes/
 │   └── views/
@@ -130,27 +166,36 @@ http://localhost:3000
 
 ---
 
-## Sample Accounts
+## Test Account Credentials
+
+All test accounts use the following password:
+
+**P@$$w0rd!**
 
 ### Administrator
 
-Create an administrator account by updating a user's role in the database to:
-
-```text
-admin
-```
+Email: admin@mblclinic.com
 
 ### Patient
 
-Register a new account using the application's registration page.
+Email: patient@mblclinic.com
+
+---
+
+## Known Limitations
+
+- Password reset functionality has not been implemented.
+- Appointment reminder notifications are not available.
+- Image uploads for dental services are not supported.
+- The application is designed for a single dental clinic.
 
 ---
 
 ## Live Application
 
-**Render Deployment**
+Render Deployment:
 
-(https://mbl-dental-clinic.onrender.com/)
+https://mbl-dental-clinic.onrender.com
 
 ---
 
@@ -169,5 +214,3 @@ BYU–Idaho
 CSE 340 – Web Backend Development
 
 2026
-
----
