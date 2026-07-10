@@ -1,74 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- page information -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dental Services</title>
+<%- include("../partials/header", {
+    title: "Dental Services",
+    subtitle: "Services offered by MBL Dental Clinic",
+    css: "services"
+}) %>
 
-    <!-- connect css file -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+<section class="services-grid">
 
-    <!-- clinic header -->
-    <header class="header">
+    <% if (services.length === 0) { %>
 
-        <!-- clinic logo -->
-        <img
-            src="/images/logo.png"
-            alt="MBL Dental Clinic Logo"
-            class="header-logo"
-        >
+        <div class="service-card">
 
-        <!-- page title and navigation -->
-        <div class="header-content">
-            <h1>Dental Services</h1>
+            <h2>No Services Available</h2>
 
-            <p class="subtitle">
-                Services offered by MBL Dental Clinic
+            <p>
+                Please check back later.
             </p>
 
-            <!-- navigation menu -->
-            <nav>
-                <a href="/">Dashboard</a>
-                <a href="/patients">Patients</a>
-                <a href="/appointments">Appointments</a>
-                <a href="/services">Services</a>
-            </nav>
         </div>
 
-    </header>
+    <% } else { %>
 
-    <main>
+        <% services.forEach(service => { %>
 
-        <!-- page section title -->
-        <div class="section-header">
-            <h2>Available Services</h2>
-        </div>
+            <div class="service-card">
 
-        <!-- services from database -->
-        <section class="services-grid">
+                <h2>
+                    <%= service.service_name %>
+                </h2>
 
-            <% services.forEach(service => { %>
+                <p>
+                    <%= service.description %>
+                </p>
 
-                <div class="service-card">
-                    <h2><%= service.service_name %></h2>
+                <h3>
+                    ₱<%= Number(service.price).toFixed(2) %>
+                </h3>
 
-                    <p>
-                        <%= service.description %>
-                    </p>
+            </div>
 
-                    <h3>
-                        $<%= service.price %>
-                    </h3>
-                </div>
+        <% }) %>
 
-            <% }) %>
+    <% } %>
 
-        </section>
+</section>
 
-    </main>
-
-</body>
-</html>
+<%- include("../partials/footer") %>

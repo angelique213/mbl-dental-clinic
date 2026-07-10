@@ -1,39 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- page information -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
 
-    <!-- connect css file -->
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
 </head>
+
 <body>
 
-    <!-- register form card -->
-    <div class="form-card">
-        <h1>Create Account</h1>
+<header class="header">
 
-        <!-- user registration form -->
-        <form action="/register" method="POST">
-            <input type="text" name="first_name" placeholder="First Name" required>
+    <img
+        src="/images/logo.png"
+        alt="MBL Dental Clinic Logo"
+        class="header-logo"
+    >
 
-            <input type="text" name="last_name" placeholder="Last Name" required>
+    <div class="header-content">
 
-            <input type="email" name="email" placeholder="Email" required>
+        <h1>MBL Dental Clinic</h1>
 
-            <input type="password" name="password" placeholder="Password" required>
+        <p class="subtitle">
+            Booking and Management System
+        </p>
 
-            <button type="submit">Register</button>
-        </form>
+        <nav>
 
-        <!-- link back to login -->
-        <a class="back-link" href="/login">Already have an account? Login</a>
+            <a href="/">Dashboard</a>
 
-        <!-- link back to dashboard -->
-        <a class="back-link" href="/">Back to Dashboard</a>
+            <a href="/services">Services</a>
+
+            <a href="/login">Login</a>
+
+            <a href="/register">Register</a>
+
+        </nav>
+
     </div>
 
-</body>
-</html>
+</header>
+
+<main>
+
+    <div class="form-card">
+
+        <h2>Create Account</h2>
+
+        <p class="form-subtitle">
+            Register to book appointments and manage your dental records.
+        </p>
+
+        <form
+            action="/register"
+            method="POST"
+        >
+
+            <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="add-button"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="form-links">
+
+            <p>
+                Already have an account?
+            </p>
+
+            <a href="/login">
+                Login Here
+            </a>
+
+            <br><br>
+
+            <a href="/">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<%- include("../partials/footer") %>

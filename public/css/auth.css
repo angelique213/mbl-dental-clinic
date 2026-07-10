@@ -1,0 +1,134 @@
+/* center the login/register card */
+main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+/* white form card */
+.form-card{
+
+    width:100%;
+    max-width:480px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+    text-align:center;
+
+}
+
+/* page title */
+.form-card h2{
+
+    color:#d1007a;
+
+    margin-top:0;
+
+    font-size:36px;
+
+}
+
+/* subtitle */
+.form-subtitle{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+    line-height:1.6;
+
+}
+
+/* form */
+.form-card form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* textboxes */
+.form-card input{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:16px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+/* input focus */
+.form-card input:focus{
+
+    border-color:#d1007a;
+
+}
+
+/* login button */
+.form-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+/* links section */
+.form-links{
+
+    margin-top:30px;
+
+}
+
+/* links */
+.form-links a{
+
+    color:#d1007a;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+/* hover */
+.form-links a:hover{
+
+    text-decoration:underline;
+
+}
+
+.form-links p{
+
+    margin-bottom:10px;
+
+    color:#555;
+
+}

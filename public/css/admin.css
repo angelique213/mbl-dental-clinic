@@ -1,0 +1,85 @@
+/* admin page container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* page title */
+.container h2 {
+    text-align: center;
+    color: #d1007a;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+/* card layout */
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* individual card */
+.card {
+    background: white;
+    width: 320px;
+    min-height: 280px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+    border-top: 8px solid #39d60a;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+/* hover effect */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* card title */
+.card h3 {
+    color: #d1007a;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* number */
+.card h1 {
+    font-size: 52px;
+    margin: 20px 0;
+}
+
+/* description */
+.card p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* button */
+.btn {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    background: #39d60a;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #2eb208;
+}

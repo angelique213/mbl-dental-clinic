@@ -1,8 +1,15 @@
-// import bcrypt to check hashed passwords
+// import bcrypt
 import bcrypt from "bcrypt";
 
-// import user model functions
-import { findUserByEmail, createUser } from "../models/userModel.js";
+// import models
+import {
+    findUserByEmail,
+    createUser
+} from "../models/userModel.js";
+
+import {
+    addPatient
+} from "../models/patientsModel.js";
 
 // show login page
 const showLogin = (req, res) => {
@@ -11,6 +18,7 @@ const showLogin = (req, res) => {
 
 // login user
 const loginUser = async (req, res) => {
+
     const { email, password } = req.body;
 
     const user = await findUserByEmail(email);
@@ -19,7 +27,10 @@ const loginUser = async (req, res) => {
         return res.send("Email or password is incorrect.");
     }
 
-    const passwordMatches = await bcrypt.compare(password, user.password);
+    const passwordMatches = await bcrypt.compare(
+        password,
+        user.password
+    );
 
     if (!passwordMatches) {
         return res.send("Email or password is incorrect.");
@@ -34,16 +45,25 @@ const loginUser = async (req, res) => {
     };
 
     res.redirect("/");
+
 };
 
 // show register page
 const showRegister = (req, res) => {
+
     res.render("auth/register");
+
 };
 
-// register new user
+// register user
 const registerUser = async (req, res) => {
-    const { first_name, last_name, email, password } = req.body;
+
+    const {
+        first_name,
+        last_name,
+        email,
+        password
+    } = req.body;
 
     const existingUser = await findUserByEmail(email);
 
@@ -51,21 +71,42 @@ const registerUser = async (req, res) => {
         return res.send("Email already exists.");
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword =
+        await bcrypt.hash(password, 10);
 
-    await createUser(first_name, last_name, email, hashedPassword);
+    // create user
+    const user = await createUser(
+        first_name,
+        last_name,
+        email,
+        hashedPassword
+    );
+
+    // automatically create patient profile
+    await addPatient(
+        user.user_id,
+        "",
+        "",
+        null,
+        ""
+    );
 
     res.redirect("/login");
+
 };
 
-// logout user
+// logout
 const logoutUser = (req, res) => {
+
     req.session.destroy(() => {
+
         res.redirect("/");
+
     });
+
 };
 
-// export controller functions
+// export
 export {
     showLogin,
     loginUser,

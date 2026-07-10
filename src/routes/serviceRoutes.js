@@ -1,14 +1,14 @@
 // import express
 import express from "express";
 
-// import services controller
+// import controller
 import { showServices } from "../controllers/servicesController.js";
 
 // create router
 const router = express.Router();
 
-// services route
-router.get("/services", showServices);
+// show all services
+router.get("/", showServices);
 
 // export router
 export default router;

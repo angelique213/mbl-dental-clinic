@@ -1,0 +1,73 @@
+<%- include("../partials/header", {
+    title: "Admin Dashboard",
+    subtitle: "MBL Dental Clinic Booking and Management System",
+    css: "admin"
+}) %>
+
+<div class="container">
+
+    <h2>Administrator Dashboard</h2>
+
+    <p
+        style="
+            text-align:center;
+            color:#666;
+            margin-top:-20px;
+            margin-bottom:40px;
+        "
+    >
+        Manage patients, appointments, and dental services from one place.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Patients</h3>
+
+            <h1><%= patientCount %></h1>
+
+            <a
+                href="/patients"
+                class="btn"
+            >
+                View Patients
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Appointments</h3>
+
+            <h1><%= appointmentCount %></h1>
+
+            <a
+                href="/admin/appointments"
+                class="btn"
+            >
+                Manage Appointments
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Services</h3>
+
+            <h1><%= serviceCount %></h1>
+
+            <a
+                href="/admin/services"
+                class="btn"
+            >
+                Manage Services
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("../partials/footer") %>

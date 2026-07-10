@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edit Patient</title>
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<img
+src="/images/logo.png"
+alt="MBL Dental Clinic Logo"
+class="header-logo"
+>
+
+<div class="header-content">
+
+<h1>Edit Patient</h1>
+
+<p class="subtitle">
+Update Patient Information
+</p>
+
+<nav>
+
+<a href="/">Dashboard</a>
+<a href="/patients">Patients</a>
+<a href="/appointments">Appointments</a>
+<a href="/services">Services</a>
+<a href="/admin">Admin</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<div class="form-container">
+
+<h2>Edit Patient</h2>
+
+<form action="/patients/edit/<%= patient.patient_id %>" method="POST">
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+type="text"
+name="phone"
+value="<%= patient.phone %>"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Address</label>
+
+<textarea
+name="address"
+rows="3"
+required
+><%= patient.address %></textarea>
+
+</div>
+
+</div>
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>Birth Date</label>
+
+<input
+type="date"
+name="birth_date"
+value="<%= patient.birth_date.toISOString().split('T')[0] %>"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>Emergency Contact</label>
+
+<input
+type="text"
+name="emergency_contact"
+value="<%= patient.emergency_contact %>"
+required
+>
+
+</div>
+
+</div>
+
+<button class="add-button" type="submit">
+Update Patient
+</button>
+
+</form>
+
+</div>
+
+</main>
+
+</body>
+
+</html>

@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- page information -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login</title>
 
-    <!-- connect css file -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+
 </head>
+
 <body>
 
-    <!-- login form card -->
-    <div class="form-card">
-        <h1>Login</h1>
+<header class="header">
 
-        <!-- user login form -->
-        <form action="/login" method="POST">
-            <input type="email" name="email" placeholder="Email" required>
+    <img
+        src="/images/logo.png"
+        alt="MBL Dental Clinic Logo"
+        class="header-logo"
+    >
 
-            <input type="password" name="password" placeholder="Password" required>
+    <div class="header-content">
 
-            <button type="submit">Login</button>
-        </form>
+        <h1>MBL Dental Clinic</h1>
 
-        <!-- link to register -->
-        <a class="back-link" href="/register">Need an account? Register</a>
+        <p class="subtitle">
+            Booking and Management System
+        </p>
 
-        <!-- link back to dashboard -->
-        <a class="back-link" href="/">Back to Dashboard</a>
+        <nav>
+
+            <a href="/">Dashboard</a>
+
+            <a href="/services">Services</a>
+
+            <a href="/login">Login</a>
+
+            <a href="/register">Register</a>
+
+        </nav>
+
     </div>
 
-</body>
-</html>
+</header>
+
+<main>
+
+    <div class="form-card">
+
+        <h2>Login</h2>
+
+        <p class="form-subtitle">
+            Sign in to access your dental account.
+        </p>
+
+        <form
+            action="/login"
+            method="POST"
+        >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="add-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+        <div class="form-links">
+
+            <p>
+                Don't have an account?
+            </p>
+
+            <a href="/register">
+                Register Here
+            </a>
+
+            <br><br>
+
+            <a href="/">
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+<%- include("../partials/footer") %>

@@ -1,61 +1,106 @@
-/* dashboard card section */
+/* dashboard cards */
 .dashboard {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
     margin: 40px auto;
 }
 
-/* individual dashboard card */
+/* individual card */
 .card {
     background: white;
-    width: 280px;
+    width: 300px;
+    min-height: 200px;
     padding: 30px;
-    border-radius: 22px;
+    border-radius: 20px;
     border-top: 8px solid #39d60a;
-    box-shadow: 0 10px 30px rgba(209, 0, 122, 0.15);
+    box-shadow: 0 10px 25px rgba(209, 0, 122, 0.15);
     text-align: center;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
 }
 
-/* card heading */
+/* hover effect */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(209, 0, 122, 0.25);
+}
+
+/* card title */
 .card h2 {
     margin-top: 0;
-    font-size: 20px;
+    margin-bottom: 15px;
+    color: #d1007a;
+    font-size: 24px;
 }
 
-/* card number */
+/* card main text */
 .card p {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
-    color: #d1007a;
-    margin: 0;
+    color: #39d60a;
+    margin: 10px 0;
+}
+
+/* card description */
+.card small {
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 15px;
 }
 
 /* welcome section */
 .welcome-section {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin: 40px 0;
 }
 
+/* welcome card */
 .welcome-card {
     background: white;
     width: 90%;
     max-width: 900px;
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
     text-align: center;
 }
 
-/* welcome title */
+/* welcome heading */
 .welcome-card h2 {
     color: #d1007a;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* welcome message */
+/* welcome paragraph */
 .welcome-text {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* feature list */
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+}
+
+.features li {
+    font-size: 18px;
+    margin: 14px 0;
+}
+
+/* dashboard buttons */
+.add-button,
+.transactions-btn {
+    margin: 8px;
 }
