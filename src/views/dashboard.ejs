@@ -71,13 +71,9 @@
         <ul class="features">
 
             <li>✔ Experienced Dentists</li>
-
             <li>✔ Modern Dental Equipment</li>
-
             <li>✔ Online Appointment Booking</li>
-
             <li>✔ Friendly and Professional Care</li>
-
             <li>✔ Family-Friendly Dental Services</li>
 
         </ul>
@@ -91,18 +87,27 @@
 <section class="dashboard">
 
     <div class="card">
+
         <h2>Patients</h2>
-        <p><%= typeof patientCount !== "undefined" ? patientCount : 0 %></p>
+
+        <p><%= patientCount %></p>
+
     </div>
 
     <div class="card">
+
         <h2>Appointments</h2>
-        <p><%= typeof appointmentCount !== "undefined" ? appointmentCount : 0 %></p>
+
+        <p><%= appointmentCount %></p>
+
     </div>
 
     <div class="card">
+
         <h2>Services</h2>
-        <p><%= typeof serviceCount !== "undefined" ? serviceCount : 5 %></p>
+
+        <p><%= serviceCount %></p>
+
     </div>
 
 </section>
@@ -133,18 +138,35 @@
 <section class="dashboard">
 
     <div class="card">
+
         <h2>My Appointments</h2>
-        <p>View</p>
+
+        <p><%= appointmentCount %></p>
+
+        <a
+            href="/appointments"
+            class="add-button"
+            style="margin-top:15px;display:inline-block;"
+        >
+            View
+        </a>
+
     </div>
 
     <div class="card">
+
         <h2>Services</h2>
-        <p><%= typeof serviceCount !== "undefined" ? serviceCount : 5 %></p>
+
+        <p><%= serviceCount %></p>
+
     </div>
 
     <div class="card">
+
         <h2>Status</h2>
-        <p>Pending</p>
+
+        <p><%= latestStatus %></p>
+
     </div>
 
 </section>
