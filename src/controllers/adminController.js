@@ -18,6 +18,12 @@ import {
     deleteAppointment
 } from "../models/appointmentsModel.js";
 
+// import user model
+import {
+    getAllUsers,
+    updateUserRole
+} from "../models/userAdminModel.js";
+
 // =========================
 // ADMIN DASHBOARD
 // =========================
@@ -182,6 +188,36 @@ const removeAppointment = async (req, res) => {
 
 };
 
+// =========================
+// USERS
+// =========================
+
+// show all users
+const showManageUsers = async (req, res) => {
+
+    const users = await getAllUsers();
+
+    res.render("admin/users", {
+        users
+    });
+
+};
+
+// update user role
+const saveUserRole = async (req, res) => {
+
+    const { role } = req.body;
+
+    await updateUserRole(
+        req.params.id,
+        role
+    );
+
+    res.redirect("/admin/users");
+
+};
+
+// export
 export {
 
     showAdminDashboard,
@@ -196,6 +232,9 @@ export {
     showManageAppointments,
     showEditAppointment,
     saveEditedAppointment,
-    removeAppointment
+    removeAppointment,
+
+    showManageUsers,
+    saveUserRole
 
 };
