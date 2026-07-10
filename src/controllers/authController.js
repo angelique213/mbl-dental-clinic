@@ -62,6 +62,7 @@ const registerUser = async (req, res) => {
         first_name,
         last_name,
         email,
+        phone,
         password
     } = req.body;
 
@@ -85,7 +86,7 @@ const registerUser = async (req, res) => {
     // automatically create patient profile
     await addPatient(
         user.user_id,
-        "",
+        phone,
         "",
         null,
         ""
