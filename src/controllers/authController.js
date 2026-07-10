@@ -66,6 +66,10 @@ const registerUser = async (req, res) => {
         password
     } = req.body;
 
+    // DEBUG
+    console.log("Registration Form:");
+    console.log(req.body);
+
     const existingUser = await findUserByEmail(email);
 
     if (existingUser) {
