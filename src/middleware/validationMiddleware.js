@@ -86,10 +86,35 @@ const validateRegister = (req, res, next) => {
 
 };
 
+// =========================
+// Service Validation
+// =========================
+
+const validateService = (req, res, next) => {
+
+    const {
+        service_name,
+        price
+    } = req.body;
+
+    if (!service_name || !price) {
+        return res.send("Please complete all required fields.");
+    }
+
+    if (Number(price) <= 0) {
+        return res.send("Service price must be greater than zero.");
+    }
+
+    next();
+
+};
+
+// export
 export {
 
     validatePatient,
     validateAppointment,
-    validateRegister
+    validateRegister,
+    validateService
 
 };

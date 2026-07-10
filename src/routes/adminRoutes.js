@@ -1,6 +1,11 @@
 // import express
 import express from "express";
 
+// import validation
+import {
+    validateService
+} from "../middleware/validationMiddleware.js";
+
 // import controller
 import {
     showAdminDashboard,
@@ -50,6 +55,7 @@ router.get(
 
 router.post(
     "/services/add",
+    validateService,
     saveService
 );
 
@@ -60,6 +66,7 @@ router.get(
 
 router.post(
     "/services/edit/:id",
+    validateService,
     saveEditedService
 );
 
