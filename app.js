@@ -71,6 +71,22 @@ app.use("/appointments", appointmentRoutes);
 app.use("/services", serviceRoutes);
 app.use("/admin", adminRoutes);
 
+// 404 page
+app.use((req, res) => {
+
+    res.status(404).render("errors/404");
+
+});
+
+// global error handler
+app.use((err, req, res, next) => {
+
+    console.error(err);
+
+    res.status(500).render("errors/500");
+
+});
+
 // start server
 const PORT = process.env.PORT || 3000;
 
