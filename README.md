@@ -4,7 +4,7 @@
 
 The **MBL Dental Clinic Booking and Management System** is a web application developed as the final project for **CSE 340 – Web Backend Development** at **BYU–Idaho**.
 
-The application allows patients to register, log in, book dental appointments, view their appointments, and manage their patient information. Administrators can manage patients, appointments, dental services, and user roles through a secure admin dashboard.
+The application allows patients to register, log in, book dental appointments, and view their appointments. Administrators can manage patients, appointments, dental services, and user roles through a secure admin dashboard.
 
 This project was inspired by my family's dental clinic, **MBL Dental Clinic**, in the Philippines and was created to provide a more organized and convenient appointment booking and management system.
 
@@ -24,7 +24,6 @@ This project was inspired by my family's dental clinic, **MBL Dental Clinic**, i
 - Book dental appointments
 - View appointment history
 - Cancel appointments
-- Update patient profile
 
 ### Administrator Features
 - View administrator dashboard
@@ -77,12 +76,12 @@ The following Entity Relationship Diagram (ERD) shows the database structure and
 
 Administrators can:
 
+- Access the administrator dashboard
 - Manage users and update user roles
 - Manage patients
 - Manage appointments
 - Manage dental services
-- Add, edit, and delete records
-- Access the administrator dashboard
+- Add, edit, and delete services
 
 ### Patient
 
@@ -93,7 +92,6 @@ Patients can:
 - Book dental appointments
 - View appointment history
 - Cancel appointments
-- Update their patient profile
 
 ---
 
@@ -174,11 +172,11 @@ All test accounts use the following password:
 
 ### Administrator
 
-Email: admin@mblclinic.com
+Email: `admin@mblclinic.com`
 
 ### Patient
 
-Email: patient@mblclinic.com
+Email: `patient@mblclinic.com`
 
 ---
 
@@ -187,7 +185,7 @@ Email: patient@mblclinic.com
 - Password reset functionality has not been implemented.
 - Appointment reminder notifications are not available.
 - Image uploads for dental services are not supported.
-- The application is designed for a single dental clinic.
+- The application currently supports two user roles: Administrator and Patient.
 
 ---
 
